@@ -15,7 +15,7 @@ var T = new Twit({
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
-const squareSize = 500;
+const squareSize = 2000;
 const color1 = randomColor();
 const color2 = randomColor();
 
@@ -39,11 +39,11 @@ const draw = function (direction, points) {
   for (var i = 0; i < 2; i++) {
     ctx.moveTo(x, y);
     if (direction === 'forward') {
-      var newX = x + randy.randInt(50,100);
+      var newX = x + randy.randInt((squareSize / 10),(squareSize / 5));
     } else {
-      var newX = x - randy.randInt(50,100);
+      var newX = x - randy.randInt((squareSize / 10),(squareSize / 5));
     }
-    var newY = y +randy.randInt(-100,100);
+    var newY = y +randy.randInt(-(squareSize / 5),(squareSize / 5));
     ctx.lineTo(newX, newY);
     points.push([newX, newY]);
   }
