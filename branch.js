@@ -55,6 +55,7 @@ const draw = function (direction, points) {
 ctx.beginPath();
 draw('forward', [start]);
 ctx.strokeStyle = color2;
+ctx.lineWidth = 2;
 ctx.stroke();
 
 ctx.beginPath();
